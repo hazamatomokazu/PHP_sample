@@ -24,12 +24,16 @@ class UseMySQL
 	}
 
 	/**
-	 * SELECT文の実行（まだ利用されることはない）
-	 * そして思いっきり作成途中
+	 * SELECT文の実行
+	 * 
+	 * @param array $Aret 実行結果
+	 * @param string $Atable テーブル名
+	 * @param string $Aselect SELECT対象のカラム
+	 * @param string $Awhere 条件
+	 * @param string $Aorder 順序
 	 */
 	function SelectExec( &$Aret, $Atable, $Aselect = '*', $Awhere = '', $Aorder = '' )
 	{
-		// SELECT実行
 		$sql = sprintf( "SELECT %s ", $Aselect );
 		$sql .= sprintf( "FROM %s ", $Atable );
 		if ( $Awhere !== '' ) {
@@ -39,16 +43,23 @@ class UseMySQL
 			$sql .= sprintf( "ORDER BY %s", $Aorder );
 		}
 		$Aret = $this->cCon->query( $sql );
+//		$Aret = $Aret->fetch_assoc();
 	}
-
-    /**
-     * INSERT文の実行
-     */
-    function InsertExec()
+	
+	/**
+	 * 
+	 * INSERT文の実行
+	 * 
+	 * @param boolean $Aret クエリの実行結果
+	 * @param string $Atable テーブル
+	 * @param string $Acol カラム
+	 * @param string $Aval 値
+	 */
+	function InsertExec( &$Aret, $Atable, $Acol, $Aval )
 	{
-        // 必要になったら
-    }
+		$sql = sprintf( "INSERT INTO %s ( %s ) VALUE ( %s )",$Atable ,$Acol ,$Aval );
+		// クエリの実行
+		$Aret = $this->cCon->query( $sql );
+	}
 }
-
-
 ?>

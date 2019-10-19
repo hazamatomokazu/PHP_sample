@@ -12,7 +12,7 @@
 	<div>繰り返し反復ノート</div>
 
 	<form action="Login.php" method="post">
-		<div>空
+		<div>
 			ID<input type="text" name="id">
 		</div>
 		<div>
