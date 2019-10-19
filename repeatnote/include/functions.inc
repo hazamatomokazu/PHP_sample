@@ -55,7 +55,6 @@ function BackTopButton( $AstrMessage )
 function BackButton( $AstrCap = '戻る' )
 {
 	print "<button onClick='history.back()'>{$AstrCap}</button>";
-	
 }
 
 

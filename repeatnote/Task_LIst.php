@@ -14,8 +14,6 @@
 	
 	// インスタンス生成
 	$db = new UseMySQL;
-	// 接続
-//	$db->ConnectDB();
 	
 	// SELECT実行
 	$table	= "data_task d, master_user m";
