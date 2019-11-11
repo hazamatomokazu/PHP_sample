@@ -1,0 +1,13 @@
+/*
+ * 共通CSS
+ */
+
+html {
+    background-color: #ffffff;
+    font-size       : 14px;
+    color           : #000000;
+}
+
+body {
+    margin          : 0px;
+}
